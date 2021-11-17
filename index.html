@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    svg {
+      width: 50px;
+      height: 50px;
+      bottom: 10px;
+      right: 10px;
+    }
+    svg circle {
+      fill: red;
+      cursor: pointer;
+    }
+    svg .circul{
+        fill: chartreuse;
+    }
+    svg circle:hover {
+      fill: blue;
+    }
+    .redondo{
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+    }
+    .redondo2{
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        visibility: hidden;
+        transition: 0.5s ease-in;
+        z-index: -1;
+    }
+    .redondo2.active{
+        bottom: 67px;
+        visibility: visible;
+    }
+  </style>
+  <body>
+    <svg viewBox="0 0 10 10" class="redondo">
+      <defs></defs>
+      <title>MI PRIMER SVG</title>
+      <circle class="circle" cx="5" cy="5" r="5" />
+    </svg>
+
+    <svg viewBox="0 0 10 10" class="redondo2">
+      <defs></defs>
+      <title>MI PRIMER SVG</title>
+      <circle class=" circul" cx="5" cy="5" r="5" />
+    </svg>
+
+    <script>
+      const circulo = document.querySelector(".circle");
+      const redondo2 = document.querySelector(".redondo2");
+      circulo.addEventListener("click", () => {
+        // alert("evento");
+        redondo2.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
