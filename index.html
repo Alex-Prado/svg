@@ -20,15 +20,19 @@
     svg .circul{
         fill: chartreuse;
     }
-    svg circle:hover {
+    /* svg circle:hover {
       fill: blue;
+    } */
+    svg .circulo{
+        fill: aqua;
     }
     .redondo{
         position: fixed;
         bottom: 15px;
         right: 15px;
     }
-    .redondo2{
+    .redondo2,
+    .redondo3{
         position: fixed;
         bottom: 15px;
         right: 15px;
@@ -40,6 +44,10 @@
         bottom: 67px;
         visibility: visible;
     }
+    .redondo3.active{
+        bottom: 119px;
+        visibility: visible;
+    }
   </style>
   <body>
     <svg viewBox="0 0 10 10" class="redondo">
@@ -48,18 +56,25 @@
       <circle class="circle" cx="5" cy="5" r="5" />
     </svg>
 
-    <svg viewBox="0 0 10 10" class="redondo2">
-      <defs></defs>
-      <title>MI PRIMER SVG</title>
-      <circle class=" circul" cx="5" cy="5" r="5" />
-    </svg>
-
+   
+      <svg viewBox="0 0 10 10" class="redondo3">
+        <defs></defs>
+        <title>MI PRIMER SVG</title>
+        <circle class=" circulo" cx="5" cy="5" r="5" />
+      </svg>
+      <svg viewBox="0 0 10 10" class="redondo2">
+        <defs></defs>
+        <title>MI PRIMER SVG</title>
+        <circle class=" circul" cx="5" cy="5" r="5" />
+      </svg>
     <script>
       const circulo = document.querySelector(".circle");
       const redondo2 = document.querySelector(".redondo2");
+      const redondo3 = document.querySelector(".redondo3");
       circulo.addEventListener("click", () => {
         // alert("evento");
         redondo2.classList.toggle('active');
+        redondo3.classList.toggle('active');
       });
     </script>
   </body>
