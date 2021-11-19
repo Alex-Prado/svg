@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  width: 70px;
+  background-color: aquamarine;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  box-shadow: 15px 0 0 #333;
+  border-left: 10px solid grey;
+  transition: 0.5s;
+}
+
+.container:hover {
+  width: 300px;
+}
+.container ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  padding: 70px 0 0 5px;
+  overflow-x: hidden;
+}
+.container ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+.container ul li.active {
+  background-color: #333;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+}
+.container ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #333;
+  /* justify-content: center; */
+}
+.container ul li.active a{
+    color: #fff;
+}
+.container ul li.active a::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 160, 122, 0);
+  border-radius: 50%;
+  top: -30px;
+  right: 0;
+  box-shadow: 15px 15px 0 #333;
+}
+.container ul li.active a::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff00;
+  border-radius: 50%;
+  bottom: -30px;
+  right: 0;
+  box-shadow: 15px -15px 0 #333;
+}
+.container ul li a .icono {
+  min-width: 60px;
+  height: 60px;
+  display: block;
+  line-height: 65px;
+  text-align: center;
+}
+
+/* -----------------------
+------------------
+--------------- */
+.menu {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.toggle {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #999;
+  background: #fff;
+  transition: width, transform, 1.5s;
+  z-index: 100;
+  border: 1px solid #ddd;
+}
+.menu.active .toggle {
+  width: 60px;
+  transform: rotate(315deg);
+  border-radius: 50px;
+}
+.menu li {
+  position: absolute;
+  list-style: none;
+  transition: 0.5s;
+  transform-origin: 100px;
+  transition-delay: calc(0.1s * var(--i));
+  left: 0;
+  transform: rotate(0deg) translateX(80px);
+}
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+.menu li a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px #999;
+  border: 1px solid #ddd;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+}
+.menu li a:hover {
+  background: #444;
+  color: #fff;
+}
